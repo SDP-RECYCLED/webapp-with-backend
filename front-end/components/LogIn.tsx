@@ -1,8 +1,11 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 
 const Login = () => {
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -14,11 +17,35 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you can handle the login logic, such as submitting the email and password to your backend
+
+    // Here you handle the login logic by submitting the email and password to your backend
     console.log('Email:', email);
     console.log('Password:', password);
+
+    const payload = {
+      email: email,
+      password: password,
+    };
+
+    fetch('http://127.0.0.1:5000/api/login_user',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', // Necessary for cookies if your authentication uses them
+      body: JSON.stringify(payload),
+    }
+    ).then(resp => resp.json())
+    .then(data => {
+      window.location.href = '/home_loggedin';
+      // console.log(data);
+    }).catch(e => {
+      alert('An error occurred during login.');
+      console.log(e);
+    })
   };
 
   return (
@@ -55,13 +82,11 @@ const Login = () => {
             />
           </div>
           <div className="flex items-center justify-between">
-            <Link href="/home_loggedin">
               <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit">
                 Log In
               </button>
-            </Link>
             
           </div>
         </form>

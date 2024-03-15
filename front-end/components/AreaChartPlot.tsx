@@ -1,43 +1,65 @@
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-const AreaChartPlot = () => {
-  const data = [
-    {
-      "date": "15/02",
-      "general waste": 4000,
-      "recycled": 2400
-    },
-    {
-      "date": "16/02",
-      "general waste": 3000,
-      "recycled": 1398
-    },
-    {
-      "date": "17/02",
-      "general waste": 2000,
-      "recycled": 9800
-    },
-    {
-      "date": "18/02",
-      "general waste": 2780,
-      "recycled": 3908
-    },
-    {
-      "date": "19/02",
-      "general waste": 1890,
-      "recycled": 4800
-    },
-    {
-      "date": "20/02",
-      "general waste": 2390,
-      "recycled": 3800
-    },
-    {
-      "date": "21/02",
-      "general waste": 3490,
-      "recycled": 4300
-    }
-  ]
+import React, { useEffect, useState } from 'react';
 
+const AreaChartPlot = () => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/api/update_bin_status'); // Adjust the URL as needed
+        const json = await response.json();
+        setData(json);
+        console.log("Fetched data:", json);
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+
+  // const data = [
+  //   {
+  //     "date": "15/02",
+  //     "general waste": 4000,
+  //     "recycled": 2400
+  //   },
+  //   {
+  //     "date": "16/02",
+  //     "general waste": 3000,
+  //     "recycled": 1398
+  //   },
+  //   {
+  //     "date": "17/02",
+  //     "general waste": 2000,
+  //     "recycled": 9800
+  //   },
+  //   {
+  //     "date": "18/02",
+  //     "general waste": 2780,
+  //     "recycled": 3908
+  //   },
+  //   {
+  //     "date": "19/02",
+  //     "general waste": 1890,
+  //     "recycled": 4800
+  //   },
+  //   {
+  //     "date": "20/02",
+  //     "general waste": 2390,
+  //     "recycled": 3800
+  //   },
+  //   {
+  //     "date": "21/02",
+  //     "general waste": 3490,
+  //     "recycled": 4300
+  //   }
+  // ]
+  
   return (
     <>
         <ResponsiveContainer width="100%" height="100%">
