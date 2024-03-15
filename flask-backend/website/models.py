@@ -11,7 +11,7 @@ class BinStatusEnum(enum.Enum):
     Red = "RequiresMaintenance"
     
 
-class classification_data(db.Model):
+class ClassificationData(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     image_name = db.Column(db.String(100))
     item_class = db.Column(db.String(100))
@@ -24,7 +24,7 @@ class Bin(db.Model):
     bin_id = db.Column(db.Integer, primary_key=True)
     bin_status = db.Column(Enum(BinStatusEnum), default=BinStatusEnum.Green)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    classification_data = db.relationship('classification_data')
+    classification_data = db.relationship('ClassificationData')
 
 
 class User(db.Model, UserMixin):

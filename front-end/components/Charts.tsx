@@ -2,8 +2,26 @@
 import AreaChartPlot from "./AreaChartPlot";
 import PieChartPlot from "./PieChartPlot";
 import RadarChartPlot from "./RadarChartPlot";
+import React, { useEffect, useState } from 'react';
 
 const Charts = () => {
+
+    const [data, setData] = useState([]);
+  
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch('http://127.0.0.1:5000/api/recycled_items'); // Adjust the URL as needed
+            const json = await response.json();
+            setData(json);
+            console.log("Fetched data:", json);
+          } catch (error) {
+            console.error("Failed to fetch data:", error);
+          }
+        };
+        fetchData();
+      }, []);
+
   return (
     <>
         <section>
@@ -45,7 +63,6 @@ const Charts = () => {
             <div className="w-1/3 h-[250px] bg-white rounded"><AreaChartPlot/></div>
             <div className=" w-1/3 h-[300px]  bg-white rounded"><RadarChartPlot/></div>
         </section>
-
     </>
   );
 };
