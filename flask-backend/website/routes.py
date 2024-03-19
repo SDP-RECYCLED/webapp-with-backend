@@ -37,7 +37,6 @@ def update_user_details():
         update_user(email, new_org_name, new_email, new_password)
         return jsonify({'message': 'User updated'})
     
-
 @routes.route('/delete_user', methods=['POST'])
 def delete_user_now():
     if request.method == 'POST':
@@ -45,7 +44,6 @@ def delete_user_now():
         delete_user(email)
         return jsonify({'message': 'User deleted'})
     
-
 @routes.route('/read_user', methods=['POST'])
 def read_user_now():
     if request.method == 'POST':
@@ -139,10 +137,10 @@ def get_area_chart_data():
         date = date.strftime("%Y-%m-%d")
         dates.append(date)
 
-    #for these 7 dates I want to now check if there are any items in the database that have been created on these dates
     data = retrieve_items()
     date_map_recycled = {}
     date_map_general = {}
+    total = 0
     for date in dates:
         date_map_recycled[date] = 0
         date_map_general[date] = 0
@@ -150,15 +148,15 @@ def get_area_chart_data():
             if str(date) in str(data_point.time_created):
                 if data_point.item_class == "recycled":
                     date_map_recycled[date] += 1
+                    total += 1
                 elif data_point.item_class == "general waste":
                     date_map_general[date] += 1
+                    total += 1
                     
     data_final = []
     for date in dates[::-1]:
-        #i need to make a list of json data points now for the area chart, and the date needs to be in dd/mm format
         date_formatted = datetime.datetime.strptime(date, "%Y-%m-%d").strftime("%d/%m")
         data_final.append({"date": date_formatted, "general waste": date_map_general[date], "recycled": date_map_recycled[date]})
-    
     return jsonify(data_final)
 
 @routes.route('/recycled_items', methods=['GET'])
@@ -166,8 +164,45 @@ def recycled_items_now():
     data = retrieve_item_by_class("recycled")
     total = retrieve_items()
     proportion = round(len(data)/len(total), 2)
+
+    dates = []
+    #retrieve the previous 7 dates    
+    for i in range(7):
+        date = datetime.date.today() - datetime.timedelta(days=i)
+        date = date.strftime("%Y-%m-%d")
+        dates.append(date)
+
+
+    total = 0
+    for date in dates:
+        for data_point in data:
+            if str(date) in str(data_point.time_created):
+                total += 1
+    
+
+
     stats = [
-        {"proportion": proportion, "recycled": len(data)}
+        {"proportion": proportion, "recycled": len(data), "total": total}
     ]
     return jsonify(stats)
-        
+
+@routes.route('/items_recycled_this_week', methods=['GET'])
+def items_recycled_this_weel():
+    dates = []
+    for i in range(7):
+        date = datetime.date.today() - datetime.timedelta(days=i)
+        date = date.strftime("%Y-%m-%d")
+        dates.append(date)
+
+    data = retrieve_items()
+    date_map_recycled = {}
+    for date in dates:
+        date_map_recycled[date] = 0
+        for data_point in data:
+            if str(date) in str(data_point.time_created):
+                if data_point.item_class == "recycled":
+                    date_map_recycled[date] += 1
+    total = 0
+    for date in dates:
+        total += date_map_recycled[date]
+    return jsonify(total)

@@ -4,16 +4,23 @@ import PieChartPlot from "./PieChartPlot";
 import RadarChartPlot from "./RadarChartPlot";
 import React, { useEffect, useState } from 'react';
 
+interface RecycledData {
+    proportion: number;
+    recycled: number;
+    total: number;
+  }
+
 const Charts = () => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<RecycledData[]>([]);
   
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await fetch('http://127.0.0.1:5000/api/recycled_items'); // Adjust the URL as needed
-            const json = await response.json();
-            setData(json);
+            const response = await fetch('http://127.0.0.1:5000/api/recycled_items');
+            // Assume the response is an array of RecycledData objects
+            const json: RecycledData[] = await response.json();
+            setData(json); // Update the state with the fetched data
             console.log("Fetched data:", json);
           } catch (error) {
             console.error("Failed to fetch data:", error);
@@ -22,36 +29,40 @@ const Charts = () => {
         fetchData();
       }, []);
 
+    
+    if (data.length === 0) {
+        return <p>Loading...</p>;
+      }
+    const proportionValue = data[0].proportion;
+    const recycledValue = data[0].recycled;
+    const totalValue = data[0].total;
+    console.log("data:", data[0]);
   return (
     <>
         <section>
             <div className="flex m-4 gap-2">
                 <div className="flex-1 px-2 justify-center w-16 bg-white rounded h-300px ">
                     <div className="">
-                        <p className="text-transparent bg-clip-text bg-gradient-to-t from-teal-1 to-green-400 py-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl inline-block">100,000 </p>
+                        <p className="text-transparent bg-clip-text bg-gradient-to-t from-teal-1 to-green-400 py-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl inline-block">{recycledValue}</p>
                         <p className="text-black font-bold">items recycled (all time)</p>
-                        <p className="text-green-400">34.5% of all waste</p>
                     </div>
                 </div>
                 <div className="flex-1 px-2 justify-center w-16 bg-white rounded max-h-300px">
                     <div className="">
-                        <p className="text-transparent bg-clip-text bg-gradient-to-t from-teal-1 to-green-400 py-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl inline-block">30%</p>
-                        <p className="text-black font-bold">better than human recycling rate</p>
-                        <p className="text-green-400">+34.5%</p>
+                        <p className="text-transparent bg-clip-text bg-gradient-to-t from-teal-1 to-green-400 py-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl inline-block">{Math.round(proportionValue * 100)}%</p>
+                        <p className="text-black font-bold">of all waste recycled</p>
                     </div>
                 </div>
                 <div className="flex-1 px-2 justify-center w-16 bg-white rounded max-h-300px">
                     <div className="">
-                    <p className="text-transparent bg-clip-text bg-gradient-to-t from-teal-1 to-green-400 py-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl inline-block">234</p>
+                    <p className="text-transparent bg-clip-text bg-gradient-to-t from-teal-1 to-green-400 py-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl inline-block">{totalValue}</p>
                     <p className="text-black font-bold">items recycled this week</p>
-                    <p className="text-green-400">+25</p>
                     </div>
                 </div>
                 <div className="flex-1 px-2 justify-center w-16 bg-white rounded h-300px">
                     <div className="">
                         <p className="text-transparent bg-clip-text bg-gradient-to-t from-teal-1 to-green-400 py-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl inline-block">1pm</p>
                         <p className="text-black font-bold">most active time of day</p>
-                        <p className="text-green-400">-1hr</p>
                     </div>
                 </div>
             </div>
