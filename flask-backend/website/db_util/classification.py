@@ -1,5 +1,6 @@
 from website.models import ClassificationData
 from website import db
+import datetime
 
 def create_classification_data(image_name, item_class, item_confidence, bin_id):
     classification_data = ClassificationData(image_name=image_name, item_class=item_class, item_confidence=item_confidence, bin_id=bin_id)
@@ -35,5 +36,12 @@ def retrieve_item_by_class(item_class):
 def retrieve_items():
     try:
         return ClassificationData.query.all()
+    except:
+        print("Error in reading classification_data")
+
+def retrieve_item_by_date(date):
+    try:
+        items = ClassificationData.query.all()
+        return items
     except:
         print("Error in reading classification_data")

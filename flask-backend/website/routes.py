@@ -1,7 +1,8 @@
 from flask import Blueprint, request, jsonify
 from .db_util.user import create_user, read_user, update_user, delete_user
-from .db_util.classification import retrieve_item_by_class, retrieve_items, create_classification_data
+from .db_util.classification import retrieve_item_by_class, retrieve_items, create_classification_data, retrieve_item_by_date
 import json
+import datetime
 
 routes = Blueprint('routes', __name__)
 
@@ -81,23 +82,58 @@ def recycled_items_now():
     return jsonify(stats)
     
 
-@routes.route('/update_bin_status', methods=['GET'])
-def update_bin_status_now():
-    # if request.method == 'POST':
-    #     bin_id = request.json['bin_id']
-    #     new_status = request.json['new_status']
-    #     update_bin_status(bin_id, new_status)
-    #     return jsonify({'message': 'Bin status updated'})
-    data = [
-        {"date": "15/02", "general waste": 4000, "recycled": 2400},
-        {"date": "16/02", "general waste": 3000, "recycled": 1398},
-        {"date": "17/02", "general waste": 2000, "recycled": 9800},
-        {"date": "18/02", "general waste": 232828, "recycled": 3908},
-        {"date": "19/02", "general waste": 1890, "recycled": 4800},
-        {"date": "20/02", "general waste": 2390, "recycled": 3800},
-        {"date": "21/02", "general waste": 99999, "recycled": 4300},
-    ]
-    return jsonify(data)
+@routes.route('/area_chart_data', methods=['GET'])
+def get_area_chart_data():
+    dates = []
+    #retrieve the previous 7 dates    
+    for i in range(7):
+        date = datetime.date.today() - datetime.timedelta(days=i)
+        date = date.strftime("%Y-%m-%d")
+        dates.append(date)
+
+    #for these 7 dates I want to now check if there are any items in the database that have been created on these dates
+    data = retrieve_items()
+    date_map_recycled = {}
+    date_map_general = {}
+    for date in dates:
+        date_map_recycled[date] = 0
+        date_map_general[date] = 0
+        for data_point in data:
+            if str(date) in str(data_point.time_created):
+                if data_point.item_class == "recycled":
+                    date_map_recycled[date] += 1
+                elif data_point.item_class == "general waste":
+                    date_map_general[date] += 1
+                    
+    data_final = []
+    for date in dates[::-1]:
+        #i need to make a list of json data points now for the area chart, and the date needs to be in dd/mm format
+        date_formatted = datetime.datetime.strptime(date, "%Y-%m-%d").strftime("%d/%m")
+        data_final.append({"date": date_formatted, "general waste": date_map_general[date], "recycled": date_map_recycled[date]})
+    
+    return jsonify(data_final)
+        
+
+        
+    
+
+    
+
+        
+    
+    # for i in range(len(data)):
+    #      data_final.append(serialize_classification_data(data[i]))
+    # return jsonify(data_final)
+    # data = [
+    #     {"date": "15/02", "general waste": 4000, "recycled": 2400},
+    #     {"date": "16/02", "general waste": 3000, "recycled": 1398},
+    #     {"date": "17/02", "general waste": 2000, "recycled": 9800},
+    #     {"date": "18/02", "general waste": 232828, "recycled": 3908},
+    #     {"date": "19/02", "general waste": 1890, "recycled": 4800},
+    #     {"date": "20/02", "general waste": 2390, "recycled": 3800},
+    #     {"date": "21/02", "general waste": 99999, "recycled": 4300},
+    # ]
+
 
 # @routes.route('/delete_bin', methods=['POST'])
 # def delete_bin_now():

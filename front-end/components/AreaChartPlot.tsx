@@ -8,7 +8,7 @@ const AreaChartPlot = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/update_bin_status'); // Adjust the URL as needed
+        const response = await fetch('http://127.0.0.1:5000/api/area_chart_data'); // Adjust the URL as needed
         const json = await response.json();
         setData(json);
         console.log("Fetched data:", json);
