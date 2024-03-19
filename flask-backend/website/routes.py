@@ -113,41 +113,19 @@ def get_area_chart_data():
     
     return jsonify(data_final)
         
+@routes.route('/delete_bin', methods=['POST'])
+def delete_bin_now():
+    if request.method == 'POST':
+        bin_id = request.json['bin_id']
+        delete_bin(bin_id)
+        return jsonify({'message': 'Bin deleted'})
 
-        
-    
-
-    
-
-        
-    
-    # for i in range(len(data)):
-    #      data_final.append(serialize_classification_data(data[i]))
-    # return jsonify(data_final)
-    # data = [
-    #     {"date": "15/02", "general waste": 4000, "recycled": 2400},
-    #     {"date": "16/02", "general waste": 3000, "recycled": 1398},
-    #     {"date": "17/02", "general waste": 2000, "recycled": 9800},
-    #     {"date": "18/02", "general waste": 232828, "recycled": 3908},
-    #     {"date": "19/02", "general waste": 1890, "recycled": 4800},
-    #     {"date": "20/02", "general waste": 2390, "recycled": 3800},
-    #     {"date": "21/02", "general waste": 99999, "recycled": 4300},
-    # ]
-
-
-# @routes.route('/delete_bin', methods=['POST'])
-# def delete_bin_now():
-#     if request.method == 'POST':
-#         bin_id = request.json['bin_id']
-#         delete_bin(bin_id)
-#         return jsonify({'message': 'Bin deleted'})
-
-# @routes.route('/read_bin', methods=['POST'])
-# def read_bin_now():
-#     if request.method == 'POST':
-#         bin_id = request.json['bin_id']
-#         bin = read_bin(bin_id)
-#         return jsonify(serialize_bin(bin))
+@routes.route('/read_bin', methods=['POST'])
+def read_bin_now():
+    if request.method == 'POST':
+        bin_id = request.json['bin_id']
+        bin = read_bin(bin_id)
+        return jsonify(serialize_bin(bin))
 
 # #as bin is not serialisable on it's own, we need to create a function to serialise it
 def serialize_bin(bin):        
@@ -169,19 +147,25 @@ def register_classification_data():
         classification_data = create_classification_data(image_name, item_class, item_confidence, bin_id)
         return jsonify(serialize_classification_data(classification_data))
 
-# @routes.route('/read_classification_data', methods=['POST'])
-# def read_classification_data_now():
-#     if request.method == 'POST':
-#         bin_id = request.json['bin_id']
-#         classification_data = read_classification_data(bin_id)
-#         return jsonify(classification_data)
-
 # @routes.route('/delete_classification_data', methods=['POST'])
 # def delete_classification_data_now():
 #     if request.method == 'POST':
 #         id = request.json['id']
 #         delete_classification_data(id)
 #         return jsonify({'message': 'Classification data deleted'})    
+
+@routes.route('/pi_chart_data')
+def pi_chart_data():
+    data = retrieve_items()
+    recycled = 0
+    general = 0
+    for data_point in data:
+        if data_point.item_class == "recycled":
+            recycled += 1
+        elif data_point.item_class == "general waste":
+            general += 1
+
+    return jsonify([{"name": "recycled", "value": recycled}, {"name": "general waste", "value": general}])
 
 # this might be needed:
 def serialize_classification_data(classification_data):

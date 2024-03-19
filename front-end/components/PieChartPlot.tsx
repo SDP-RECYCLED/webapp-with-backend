@@ -1,28 +1,21 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import React, { useEffect, useState } from 'react';
 
 const PieChartPlot = () => {
-  const data = [
-    {
-      name: "Plastic",
-      value: 200400,
-    },
-    {
-      name: "Glass",
-      value: 205000,
-    },
-    {
-      name: "Paper",
-      value: 23400,
-    },
-    {
-      name: "Metal",
-      value: 20000,
-    },
-    {
-      name: "General Waste",
-      value: 29078,
-    }
-  ];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/api/pi_chart_data'); 
+        const json = await response.json();
+        setData(json);
+        console.log("Fetched data:", json);
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const colors = [
     "#82CA9D",
