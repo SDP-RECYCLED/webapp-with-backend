@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Button from './Button'
-import ProductImage from '@/public/square_product.png'
+import ProductImage from '@/public/product_last draft.png'
 import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
