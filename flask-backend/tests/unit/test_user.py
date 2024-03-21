@@ -118,9 +118,9 @@ def test_login_user_not_found(client, mocker):
     assert res.json == {"user": None}
 
 def test_login_user_wrong_password(client, mocker):
-    email = "fake@gmail.com"
+    email = "dsbhjdshbds@gmail.com"
     password = "password"
-    org_name = "siddharth"
+    org_name = "dsbhsdhddjhs"
     user = User(email=email, password=password, org_name=org_name)
     
     mocker.patch('website.routes.read_user', return_value=user)
