@@ -5,7 +5,7 @@ const HowItWorks = () => {
     <div className="container mx-auto py-10 px-4 max-w-6xl">
       <div className="mb-12">
         <h1 className="text-3xl leading-none tracking-tight md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-          How it works
+          How It Works
         </h1>
       </div>
 
