@@ -5,7 +5,6 @@ from os import path
 db = SQLAlchemy()
 DB_NAME = "recycled.db"
 
-
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'sdpgroup13'
@@ -23,6 +22,7 @@ def create_app():
     return app
 
 def create_db(app):
+    
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')

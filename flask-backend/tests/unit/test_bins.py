@@ -3,6 +3,7 @@ import pytest
 from website.routes import serialize_bin
 from website import create_app
 import json
+from flask_sqlalchemy import SQLAlchemy
 
 @pytest.fixture()
 def app():
@@ -22,10 +23,10 @@ def client(app):
         client.app_context.push()
         yield client
 
-@pytest.fixture()
-def app_context(app):
-    with app.app_context():
-        yield
+# @pytest.fixture()
+# def app_context(app):
+#     with app.app_context():
+#         yield
 
 """
 CHECKING FOR VALID REQUESTS, ENSURING HANDLED CORRECTLY

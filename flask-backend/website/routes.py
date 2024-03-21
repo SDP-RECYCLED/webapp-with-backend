@@ -125,6 +125,7 @@ def serialize_classification_data(classification_data):
                 "item_class": classification_data.item_class,
                 "item_confidence": classification_data.item_confidence,
                 "bin_id": classification_data.bin_id,
+                "id": classification_data.id,
                 }
 
 
