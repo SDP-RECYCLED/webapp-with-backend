@@ -49,8 +49,11 @@ def read_user_now():
     if request.method == 'POST':
         email = request.json['email']
         user = read_user(email)
-        return jsonify(serialize_user(user))
-    
+        if user:
+            return jsonify(serialize_user(user))
+        else:
+            return jsonify({'user': None}), 401
+        
 def serialize_user(user):
         return {"id": user.id,
                 "email": user.email,
