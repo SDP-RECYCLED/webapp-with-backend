@@ -3,6 +3,10 @@ import Pricing from '@/components/Pricing'
 
 export default function PricingPage() {
   return (
-    <div><Pricing /></div>
+    <>
+    <div className="m-10 ">
+        <Pricing />
+    </div>
+  </>
   )
 }

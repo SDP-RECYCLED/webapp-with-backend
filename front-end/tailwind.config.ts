@@ -12,6 +12,7 @@ module.exports = {
           50: '#30AF5B',
           90: '#292C27',
           1: '#027512',
+          2: '#3dbb41',
         },
         gray: {
           10: '#EEEEEE',
@@ -37,6 +38,7 @@ module.exports = {
         },
         purple: {
           1: '#8884d8',
+          2: '#6b66b1'
         }
       },
       backgroundImage: {

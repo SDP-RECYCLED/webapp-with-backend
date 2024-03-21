@@ -6,10 +6,10 @@ import LandfillIcon from '@/public/landfill.png'
 // NAVIGATION
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
-  { href: '/', key: 'How RECYCLED works', label: 'How it works' },
-  { href: '/', key: 'services', label: 'Services' },
+  { href: '/how-it-works', key: 'How RECYCLED works', label: 'How It Works' },
+  { href: '/about-us', key: 'About Us', label: 'About Us' },
   { href: '/pricing', key: 'pricing ', label: 'Pricing ' },
-  { href: '/', key: 'contact_us', label: 'Contact Us' },
+  { href: '/contact-us', key: 'contact_us', label: 'Contact Us' },
 ];
 
 // CAMP SECTION
@@ -54,29 +54,37 @@ export const FEATURES = [
 ];
 
 // FOOTER SECTION
+// FOOTER SECTION
 export const FOOTER_LINKS = [
   {
     title: 'Learn More',
     links: [
-      'About RECYCLED',
-      'Press Releases',
-      'Environment',
-      'Jobs',
-      'Privacy Policy',
-      'Contact Us',
+      'About Us',
+      'How It Works',
+      'Contact Us'
     ],
+    urls: [
+      '/about-us',
+      '/how-it-works',
+      '/contact-us'
+    ]
   },
   {
     title: 'Our Community',
     links: ['UK Recycle', 'Other Community', 'Other Community'],
+    urls: [
+      '/uk-recycle',
+      '/other-community',
+      '/other-community'
+    ]
   },
 ];
 
 export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
-    { label: 'Admin Officer', value: '+44 (0)123-456-7890' },
-    { label: 'Email Officer', value: 'recycled@recycled.com' },
+    { label: 'Telephone', value: '+44 (0)123-456-7890' },
+    { label: 'Email', value: 'recycled@recycled.com' },
   ],
 };
 
