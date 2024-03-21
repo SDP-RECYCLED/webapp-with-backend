@@ -1,4 +1,5 @@
 from website.models import User
+from website.routes import serialize_user
 import pytest
 from website import create_app
 
@@ -39,6 +40,10 @@ def test_create_user():
     assert user.email == "random@gmail.com"
     assert user.password == "password"
     assert user.org_name == "random"
+
+def test_serialize_user():
+    user = User(email="siddharthsakriya@htomail.cim", password="password", org_name="siddharth")
+    assert serialize_user(user=user) == {"id": user.id, "email": user.email, "org_name": user.org_name}
 
 def test_register_user(client, mocker):
     email = "fake@gmail.com"
@@ -91,6 +96,7 @@ def test_login_user(client, mocker):
     res = client.post('/api/login_user', json={"email":email, "password":password})
     assert res.status_code == 200
     assert res.json == {"id": expected_user.id, "email": email, "org_name": org_name}
+                
 
 """
 CHECKING FOR INVALID REQUESTS, ENSURING HANDLED CORRECTLY
@@ -151,5 +157,6 @@ def test_delete_user_invalid_request(client):
 def test_login_user_invalid_request(client):
     res = client.get('/api/login_user')
     assert res.status_code == 405
+
 
 
