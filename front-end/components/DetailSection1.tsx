@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const DetailSection1 = () => {
   return (
-    <section className='max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row'>
+    <section className='max-container padding-container items-center justify-center flex flex-col h-full xl:flex-row'>
       <div className='hero-map' />
       {/* LEFT */}
 
@@ -17,6 +17,7 @@ const DetailSection1 = () => {
                     <h2 className='bold-40 lg:bold-88'>
                     Introducing RecyclED
                     </h2>
+                    <Image src={ProductLogo} alt="product image" width={400}/>
                 </div>
                 
                 ))}
@@ -29,8 +30,7 @@ const DetailSection1 = () => {
         </div> */}
 
         <div className='flex flex-col flex-row w-full sm:flex-row'>
-            <Image src={Product} alt="product image" width={400}/>
-            <Image src={ProductLogo} alt="product image" width={400}/>
+            <Image src={Product} alt="product image" width={500}/>
         </div>
 
       
