@@ -6,7 +6,7 @@ import LandfillIcon from '@/public/landfill.png'
 // NAVIGATION
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
-  { href: '/', key: 'How RECYCLED works', label: 'How it works' },
+  { href: '/how-it-works', key: 'How RECYCLED works', label: 'How it works' },
   { href: '/', key: 'services', label: 'Services' },
   { href: '/pricing', key: 'pricing ', label: 'Pricing ' },
   { href: '/', key: 'contact_us', label: 'Contact Us' },
