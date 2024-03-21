@@ -74,6 +74,7 @@ def test_delete_classifcation_data(client, mocker):
     assert res.status_code == 200
     assert res.json == {"message": "Classification data deleted"}
 
+
 """
 CHECKING FOR INVALID REQUESTS, ENSURING HANDLED CORRECTLY
 """

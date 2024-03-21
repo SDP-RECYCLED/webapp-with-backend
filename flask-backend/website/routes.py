@@ -81,13 +81,24 @@ def read_bin_now():
     if request.method == 'POST':
         bin_id = request.json['bin_id']
         bin = read_bin(bin_id)
-        return jsonify(serialize_bin(bin))
+        if bin:
+            return jsonify(serialize_bin(bin))
+        else:
+            return jsonify({'bin': None}), 401
 
 def serialize_bin(bin):        
         return {"bin_id": bin.bin_id,
                 "bin_status": json.dumps(bin.bin_status.value),
                 "user_id": bin.user_id,
                 }
+
+@routes.route('/update_bin_status', methods=['POST'])
+def update_bin_status_now():
+    if request.method == 'POST':
+        bin_id = request.json['bin_id']
+        new_status = request.json['new_status']
+        update_bin_status(bin_id, new_status)
+        return jsonify({'message': 'Bin status updated'})
 
 # #Classification Data routes
 # from .db_util.bin import create_classification_data, read_classification_data, delete_classification_data
