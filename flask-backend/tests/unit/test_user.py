@@ -151,3 +151,5 @@ def test_delete_user_invalid_request(client):
 def test_login_user_invalid_request(client):
     res = client.get('/api/login_user')
     assert res.status_code == 405
+
+
