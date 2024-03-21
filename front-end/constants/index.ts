@@ -9,7 +9,7 @@ export const NAV_LINKS = [
   { href: '/how-it-works', key: 'How RECYCLED works', label: 'How it works' },
   { href: '/', key: 'services', label: 'Services' },
   { href: '/pricing', key: 'pricing ', label: 'Pricing ' },
-  { href: '/', key: 'contact_us', label: 'Contact Us' },
+  { href: '/contact-us', key: 'contact_us', label: 'Contact Us' },
 ];
 
 // CAMP SECTION

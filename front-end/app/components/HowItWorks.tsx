@@ -9,18 +9,6 @@ const HowItWorks = () => {
         </h1>
       </div>
 
-      {/* Object Recognition Model */}
-      <div className="mb-12">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-green-1 to-teal-1 mb-4">
-          Object Recognition Model
-        </h2>
-        <p className="text-gray-700 leading-relaxed">
-          The object recognition model is a machine learning model that can identify 
-          and classify objects in an image. This model is used to identify the type 
-          of waste and sort it into the correct bin.
-        </p>
-      </div>
-
       {/* Cart Mechanism */}
       <div className="mb-12">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-green-1 to-teal-1 mb-4">
@@ -36,6 +24,31 @@ const HowItWorks = () => {
         <img src="/cart_image.jpg" alt="Cart Mechanism" className="w-auto h-80" />
       </div>
 
+      {/* Object Recognition Model */}
+      <div className="mb-12">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-green-1 to-teal-1 mb-4">
+          Object Recognition Model
+        </h2>
+        <p className="text-gray-700 leading-relaxed">
+          The object recognition model is a machine learning model that can identify 
+          and classify objects in an image. This model is used to identify the type 
+          of waste and sort it into the correct bin.
+        </p>
+      </div>
+
+      {/* Modular System */}
+      <div className="mb-12">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-green-1 to-teal-1 mb-4">
+          Modular System
+        </h2>
+        <p className="text-gray-700 leading-relaxed mb-5">
+          The RecyclED system features a modular design that allows most regular bins to be easily placed into the cabinet.
+          This allows for seamless integration of the RecyclED system into existing waste management infrastructure, as 
+          existing bins can be retrofitted to work with the RecyclED system. The modular system also enables easy cleaning
+          and maintenance, ensuring minimal downtime and maximum operational efficiency. 
+        </p>
+        <img src="/product_detail_bin_out.png" alt="Cabinet with bins pulled out" className="w-auto h-80" />
+      </div>
 
       {/* Data Analysis */}
       <div className="mb-12">
@@ -75,19 +88,7 @@ const HowItWorks = () => {
       </div>
 
     
-      {/* Modular System */}
-      <div className="mb-12">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-green-1 to-teal-1 mb-4">
-          Modular System
-        </h2>
-        <p className="text-gray-700 leading-relaxed mb-5">
-          The RecyclED system features a modular design that allows most regular bins to be easily placed into the cabinet.
-          This allows for seamless integration of the RecyclED system into existing waste management infrastructure, as 
-          existing bins can be retrofitted to work with the RecyclED system. The modular system also enables easy cleaning
-          and maintenance, ensuring minimal downtime and maximum operational efficiency. 
-        </p>
-        <img src="/product_detail_bin_out.png" alt="Cabinet with bins pulled out" className="w-auto h-80" />
-      </div>
+      
       
     </div>
   );
