@@ -52,7 +52,7 @@ const Navbar = () => {
           onClick={toggleNav}
         />
       </div> */}
-      <nav className="flexBetween max-container padding-container relative z-30">
+      <nav className="flexBetween max-container padding-container relative z-30 mt-5">
           <Link href="/">
             <Image src={Logo} width={200} height={relative}  alt="logo"/>
           </Link>
