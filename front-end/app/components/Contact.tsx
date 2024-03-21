@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Contact = () => {
   return (
@@ -11,8 +12,11 @@ const Contact = () => {
 
       <div className="mb-12">
         <p className="text-gray-700 leading-relaxed mb-5">
-            If you have any questions or feedback, please feel free to contact us using the form below.
+            If you have any questions or feedback, please feel free to contact us using
+            the email address below. We will get back to you as soon as possible.
+
         </p>
+      <Link href="mailto: recyled-sdp@gmail.com" className="text-blue-500 hover:underline">recycled-sdp@gmail.com</Link>
       </div>
     </div>
   );
