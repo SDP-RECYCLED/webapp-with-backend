@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Button from './Button'
 import ProductImage from '@/public/product_last draft.png'
 import { TypeAnimation } from 'react-type-animation';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -35,11 +36,13 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col w-full gap-3 sm:flex-row">
-          <Button 
-            type="button" 
-            title="See more details" 
-            variant='btn_green'
-          />
+          <Link href="/detail">
+            <Button 
+              type="button" 
+              title="See more details" 
+              variant='btn_green'
+            />
+          </Link>
         </div>
       </div>
 
