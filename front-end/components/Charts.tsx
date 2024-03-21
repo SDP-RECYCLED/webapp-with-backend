@@ -37,6 +37,7 @@ const Charts = () => {
     const recycledValue = data[0].recycled;
     const totalValue = data[0].total;
     console.log("data:", data[0]);
+    
   return (
     <>
         <section>
