@@ -52,8 +52,8 @@ const Navbar = () => {
           onClick={toggleNav}
         />
       </div> */}
-      <nav className="flexBetween max-container padding-container relative z-30 mt-5">
-          <Link href="/">
+      <nav className="flexBetween max-container padding-container relative z-30">
+          <Link href="/" className="mt-3">
             <Image src={Logo} width={200} height={relative}  alt="logo"/>
           </Link>
 
@@ -67,7 +67,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className={`sm:${!isNavVisible ? '' : 'hidden'}`}>
+          <div className={`sm:${!isNavVisible ? '' : 'hidden'} mt-3`}>
             <ul className="hidden h-full gap-12 lg:flex">
               {NAV_LINKS.map((link) => (
                   <a className="regular-16 text-gray-50 mt-3 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold" href={link.href}>
@@ -78,7 +78,7 @@ const Navbar = () => {
           </div>
 
 
-          <div className="lg:flexCenter hidden">
+          <div className="lg:flexCenter hidden mt-3">
             <Link href="/login">
               <Button type='button' title='Login' variant="btn_dark_green"/>
             </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
             alt="menu"
             width={32}
             height={32}
-            className="inline-block cursor-pointer lg:hidden"
+            className="inline-block cursor-pointer lg:hidden mt-3"
             onClick={toggleNav}
           />
         </nav>
