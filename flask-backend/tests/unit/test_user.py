@@ -24,7 +24,11 @@ def client(app):
 def app_context(app):
     with app.app_context():
         yield
-    
+
+"""
+CHECKING FOR VALID REQUESTS, ENSURING HANDLED CORRECTLY
+"""
+
 def test_create_user():
     """
     Given a User model
@@ -58,17 +62,6 @@ def test_read_user(client, mocker):
     assert res.status_code == 200
     assert res.json == {"id": expected_user.id, "email": email, "org_name": org_name}
 
-def test_read_user_not_found(client, mocker):
-    email = "fake@gmail.com"
-    password = "password"
-    org_name = "siddharth"
-    expected_user = User(email=email, password=password, org_name=org_name)
-
-    mocker.patch('website.routes.read_user', return_value=None)
-    res = client.post('/api/read_user', json={"email":email})
-    assert res.status_code == 401
-    assert res.json == {"user": None}
-
 def test_delete_user(client, mocker):
     email = "fake@gmail.com"    
     mocker.patch('website.routes.delete_user', return_value=None)
@@ -99,6 +92,21 @@ def test_login_user(client, mocker):
     assert res.status_code == 200
     assert res.json == {"id": expected_user.id, "email": email, "org_name": org_name}
 
+"""
+CHECKING FOR INVALID REQUESTS, ENSURING HANDLED CORRECTLY
+"""
+
+def test_read_user_not_found(client, mocker):
+    email = "fake@gmail.com"
+    password = "password"
+    org_name = "siddharth"
+    expected_user = User(email=email, password=password, org_name=org_name)
+
+    mocker.patch('website.routes.read_user', return_value=None)
+    res = client.post('/api/read_user', json={"email":email})
+    assert res.status_code == 401
+    assert res.json == {"user": None}
+
 def test_login_user_not_found(client, mocker):
     email = "fake@gmail.com"
     password = "password"
@@ -120,4 +128,26 @@ def test_login_user_wrong_password(client, mocker):
     assert res.status_code == 401
     assert res.json == {"user": None}
 
+"""
+CHECKING FOR INVALID REQUESTS, ENSURING HANDLED CORRECTLY
+"""
 
+def test_register_user_invalid_request(client):
+    res = client.get('/api/register_user')
+    assert res.status_code == 405
+
+def test_read_user_invalid_request(client):
+    res = client.get('/api/read_user')
+    assert res.status_code == 405
+
+def test_update_user_invalid_request(client):
+    res = client.get('/api/update_user')
+    assert res.status_code == 405
+
+def test_delete_user_invalid_request(client):
+    res = client.get('/api/delete_user')
+    assert res.status_code == 405
+
+def test_login_user_invalid_request(client):
+    res = client.get('/api/login_user')
+    assert res.status_code == 405
