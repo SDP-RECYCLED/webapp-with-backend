@@ -1,5 +1,7 @@
 "use client"
 import Charts from "@/components/Charts"
+import Button from "@/components/Button"
+import Link from 'next/link';
 import { BinData } from "@/Data/Bin/BinData"
 import { useEffect, useState } from "react";
 // import { fetchBins, UpdateStatus} from "@/connectivity/bin_api";
@@ -37,14 +39,39 @@ export default function Home() {
     // }
 
     return (
-      <div className="m-10">
-          <h2 className="mx-8 mb-6 mt-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl">Bin binID info</h2>
-          <p>TODO: Edit name</p>
-          <p>TODO: Change configuration</p>
+      <div className="m-10"> 
+        <div className="container mx-auto py-10 px-4 max-w-8xl">
+          <div className="mb-12">
+            <h1 className="text-3xl leading-none tracking-tight md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Bin binID info</h1>
+          </div>
+              <div className="flex flex-row">
+                  <div className="mr-5 mb-5">
+                    <Link href="/">
+                      <Button 
+                        type="button" 
+                        title="Edit name" 
+                        variant='btn_green'
+                      />
+                    </Link>
+                  </div>
+                  <div className="mr-5 mb-5">
+                    <Link href="/">
+                      <Button 
+                        type="button" 
+                        title="Change configuration" 
+                        variant='btn_green'
+                      />
+                    </Link>
+                  </div>
+                  
+              </div>
 
-          <h2 className="mx-8 mb-6 mt-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl">Stats</h2>
-          <Charts />
+            <div className="mb-12">
+              <h1 className="text-3xl leading-none tracking-tight md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Stats</h1>
+            </div>
+            <Charts />
 
+        </div>
       </div>
     );
 }
