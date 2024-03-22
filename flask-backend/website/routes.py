@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from .db_util.user import create_user, read_user, update_user, delete_user
-from .db_util.classification import retrieve_item_by_class, retrieve_items, create_classification_data, delete_classification_data
+from .db_util.classification import retrieve_item_by_class, retrieve_items, create_classification_data, delete_classification_data,retrieve_items
 import json
 import datetime
 
@@ -119,6 +119,12 @@ def delete_classification_data_now():
         delete_classification_data(id)
         return jsonify({'message': 'Classification data deleted'})    
 
+@routes.route('/read_classification_data', methods=['GET'])
+def read_classification_data_now():
+    if request.method == 'GET':
+        classification_data = retrieve_items()
+        return jsonify([serialize_classification_data(data) for data in classification_data])
+
 def serialize_classification_data(classification_data):
         return {
                 "image_name": classification_data.image_name,
@@ -178,8 +184,12 @@ def get_area_chart_data():
 def recycled_items_now():
     data = retrieve_item_by_class("recycled")
     total = retrieve_items()
-    proportion = round(len(data)/len(total), 2)
+    if len(total) == 0:
+        proportion = 0
+    else:
+        proportion = round(len(data)/len(total), 2)
 
+    
     dates = []
     #retrieve the previous 7 dates    
     for i in range(7):
@@ -187,37 +197,15 @@ def recycled_items_now():
         date = date.strftime("%Y-%m-%d")
         dates.append(date)
 
-
     total = 0
     for date in dates:
         for data_point in data:
             if str(date) in str(data_point.time_created):
-                total += 1
-    
-
-
+                if data_point.item_class == "recycled":
+                    total += 1
+                    
     stats = [
         {"proportion": proportion, "recycled": len(data), "total": total}
     ]
     return jsonify(stats)
 
-@routes.route('/items_recycled_this_week', methods=['GET'])
-def items_recycled_this_weel():
-    dates = []
-    for i in range(7):
-        date = datetime.date.today() - datetime.timedelta(days=i)
-        date = date.strftime("%Y-%m-%d")
-        dates.append(date)
-
-    data = retrieve_items()
-    date_map_recycled = {}
-    for date in dates:
-        date_map_recycled[date] = 0
-        for data_point in data:
-            if str(date) in str(data_point.time_created):
-                if data_point.item_class == "recycled":
-                    date_map_recycled[date] += 1
-    total = 0
-    for date in dates:
-        total += date_map_recycled[date]
-    return jsonify(total)
