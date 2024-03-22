@@ -30,7 +30,7 @@ const Navbar = () => {
           buttonText="My Account" 
           items={[
             { label: 'Profile', href:'/profile' },
-            { label: 'My bin', href: '/home' },
+            { label: 'My Bins', href: '/home' },
             { label: 'Logout', href: '/logout' }
           ]}
         />
