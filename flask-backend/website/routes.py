@@ -130,7 +130,7 @@ def serialize_classification_data(classification_data):
 
 
 #chart & statistics endpoints
-@routes.route('/pi_chart_data')
+@routes.route('/pi_chart_data', methods=['GET'])
 def pi_chart_data():
     data = retrieve_items()
     recycled = 0
