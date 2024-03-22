@@ -47,7 +47,7 @@ const HowItWorks = () => {
           existing bins can be retrofitted to work with the RecyclED system. The modular system also enables easy cleaning
           and maintenance, ensuring minimal downtime and maximum operational efficiency. 
         </p>
-        <img src="/product_detail_bin_out.png" alt="Cabinet with bins pulled out" className="w-auto h-80" />
+        <img src="/product_detail_bin_out.png" alt="Cabinet with bins pulled out" className="w-auto h-100" />
       </div>
 
       {/* Data Analysis */}

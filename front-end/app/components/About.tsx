@@ -1,4 +1,9 @@
 import React from 'react';
+import Product from '@/public/product_last draft.png'
+import Logo from '@/public/logozoomed.png'
+import Detail from '@/public/product_detail_bin_out.png'
+import Image from 'next/image';
+import { getImageSize } from 'next/dist/server/image-optimizer';
 
 const About = () => {
   return (
@@ -87,6 +92,20 @@ const About = () => {
                     <p className="text-gray-700">
                     We decided to create RecyclED to address the problem of recycling contamination.
                     </p>
+                </div>
+                <div className='flex flex-wrap justify-center'>
+                    <div>
+                        <h3 className="text-lg font-semibold text-green-1 mt-5">
+                            <span className="font-bold">Model</span>
+                        </h3>
+                        <Image src={Product} alt="project1" width={400}/>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-semibold text-green-1 mt-5">
+                            <span className="font-bold">Logo</span>
+                        </h3>
+                        <Image src={Logo} alt="project1" height={300}/>
+                    </div>
                 </div>
         </div>
     </div>

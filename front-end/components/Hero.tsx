@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col w-full gap-3 sm:flex-row">
-          <Link href="/detail">
+          <Link href="/how-it-works">
             <Button 
               type="button" 
               title="See more details" 
