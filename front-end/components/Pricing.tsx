@@ -2,7 +2,6 @@ import React from 'react';
 
 function Pricing() {
   return (
-    <div className="bg-white">
       <div className="container mx-auto py-10 px-4 max-w-6xl">
         <div className="mb-12">
           <h1 className="text-3xl leading-none tracking-tight md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Pricing</h1>
@@ -38,7 +37,6 @@ function Pricing() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
