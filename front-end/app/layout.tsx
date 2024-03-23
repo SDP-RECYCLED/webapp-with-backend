@@ -6,11 +6,6 @@ import './globals.css'
 import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer'
 
-// export const metadata: Metadata = {
-//   title: 'RecyclED',
-//   description: 'RecyclED Lucky 13',
-// }
-
 export default function RootLayout({
   children,
 }: {
@@ -19,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
+        <Navbar isLoggedIn={false} />
         <motion.main className="relative overflow-hidden">
           {children}
         </motion.main>

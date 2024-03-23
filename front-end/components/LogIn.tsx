@@ -40,7 +40,7 @@ const Login = () => {
     }
     ).then(resp => resp.json())
     .then(data => {
-      window.location.href = '/home_loggedin';
+      window.location.href = '/home';
       // console.log(data);
     }).catch(e => {
       alert('An error occurred during login.');
