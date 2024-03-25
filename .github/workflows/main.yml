@@ -36,5 +36,28 @@ jobs:
 
       - name: Run tests
         run: pytest flask-backend/tests/unit  
-  # deploy:
+        
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout Code
+      - uses: actions/checkout@v2
+
+      - name: Execute SSH to deploy
+        uses: appleboy/ssh-action@master
+        with: 
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          script: |
+            git pull git@github.com:SDP-RECYCLED/webapp-with-backend.git
+            cd webapp-with-backend
+            sudo systemctl start docker
+            sudo systemctl enable docker
+            sudo docker-compose down -v
+            sudo docker-compose up -d --build
+          
+      
     
