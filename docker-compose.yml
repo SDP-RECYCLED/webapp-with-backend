@@ -1,6 +1,31 @@
 # version: '3'
-
 # services:
+#   frontend:
+#     image: next-tailwindcss
+#     build: ./front-end/
+#     ports:
+#       - "3001:3001"
+#   backend:
+#     image: flask_docker
+#     build: ./flask-backend/
+#     ports:
+#       - "3000:3000"
+version: '3.8'
+services:
+  frontend:
+    image: next-tailwindcss
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  backend:
+    image: flask_docker
+    build:
+      context: ./flask-backend
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
 
 #   backend:
 #     container_name: backend

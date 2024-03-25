@@ -20,8 +20,9 @@ const About = () => {
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Christopher Dalziel</span>
                     </h3>
-                    <p className="text-gray-700">         
-                    Christopher is a key member of our hardware team, contributing to the development of the cart and door mechanisms. He specialises in designing 3D printed parts using Fusion 360.       </p>
+                    <p className="text-gray-700">
+                        John Doe is our lead developer. With over 5 years of experience in web development, he&apos;s proficient in various programming languages and frameworks.
+                    </p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">

@@ -16,7 +16,7 @@ const Hero = () => {
           className="absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
         />
         <h1 className='bold-52 lg:bold-88'>RecyclED</h1>
-        <p className='regular-16 mt-6 text-gray-30 xl:max-w-[520px]'>SDP Group 13 project on 'RecyclED'</p>
+        <p className='regular-16 mt-6 text-gray-30 xl:max-w-[520px]'>SDP Group 13 project on &apos;RecyclED&apos;</p>
 
         <div className='my-11 flex flex-wrap gap-5'>
           <div className='flex items-center gap-2'>

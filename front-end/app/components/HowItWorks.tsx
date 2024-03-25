@@ -1,4 +1,7 @@
 import React from 'react';
+import productmodular from '@/public/product_detail_bin_out.png'
+import cartImage from '@/public/cart_image.jpg'
+import Image from 'next/image';
 
 const HowItWorks = () => {
   return (
@@ -21,7 +24,7 @@ const HowItWorks = () => {
           which is sent to the object recognition model. The model then determines the type of waste and instructs the cart to move to the correct bin.
           The mechanism uses a colour sensor to detect the colour of the bin and moves the cart to the correct bin based on the colour.
         </p>
-        <img src="/cart_image.jpg" alt="Cart Mechanism" className="w-auto h-80" />
+        <Image src={cartImage} alt="Cart Mechanism" height={80}/>
       </div>
 
       {/* Object Recognition Model */}
@@ -47,7 +50,7 @@ const HowItWorks = () => {
           existing bins can be retrofitted to work with the RecyclED system. The modular system also enables easy cleaning
           and maintenance, ensuring minimal downtime and maximum operational efficiency. 
         </p>
-        <img src="/product_detail_bin_out.png" alt="Cabinet with bins pulled out" className="w-auto h-100" />
+        <Image src={productmodular} alt="Cabinet with bins pulled out" height={100} />
       </div>
 
 

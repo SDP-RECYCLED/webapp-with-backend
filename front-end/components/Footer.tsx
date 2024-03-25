@@ -19,12 +19,31 @@ const Footer = () => {
                 <ul className="text-sm text-gray-600">
                   {columns.links.map((link, index) => (
                     <li key={index} className="mb-2">
-                      <Link href={columns.urls[index]}>{link}</Link>
+                      <Link href={columns.urls[index]} key={index}>{link}</Link>
                     </li>
                   ))}
                 </ul>
               </FooterColumn>
             ))}
+
+            <div className="flex flex-col gap-5">
+              <FooterColumn title={FOOTER_CONTACT_INFO.title}>
+                {FOOTER_CONTACT_INFO.links.map((link, index) => (
+                  <Link
+                    href="/"
+                    key={index}
+                    className="flex gap-4 md:flex-col lg:flex-row"
+                  >
+                    <p className="whitespace-nowrap">
+                      {link.label}:
+                    </p>
+                    <p className="medium-14 whitespace-nowrap text-blue-70">
+                      {link.value}
+                    </p>
+                  </Link>
+                ))}
+              </FooterColumn>
+            </div>
           </div>
         </div>
 

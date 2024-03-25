@@ -15,7 +15,7 @@ const Hero = () => {
 
         <div className='my-11 flex flex-wrap gap-5'>
             {Array(1).fill(1).map((_, index) => (
-              <div className='w-full'>
+              <div key={index} className='w-full'>
                 <h1 className='bold-52 lg:bold-88'>
                   <TypeAnimation sequence={[
                     "The bin that sorts your rubbish for you. "
