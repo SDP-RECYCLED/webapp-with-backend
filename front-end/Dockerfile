@@ -1,43 +1,18 @@
-FROM node:18
-
-WORKDIR /app
-COPY package*.json .
+#Node.js image
+FROM node:alpine
+#setting working directory
+WORKDIR /front-end
+#copying package.json file to the working directory
+COPY package*.json /front-end
+#installing the dependencies
 RUN npm install
-COPY . ./app
+#copy the current directory contents to the container at /webapp
+COPY . /front-end
+#build the app
+RUN npm run build
+#expose the port 3000
 EXPOSE 3000
-CMD npm run dev
-# FROM node:18-alpine as base
-# RUN apk add --no-cache g++ make py3-pip libc6-compat
-# WORKDIR /app
-# COPY package*.json ./
-# EXPOSE 3000
-
-# FROM base as builder
-# WORKDIR /app
-# COPY . .
-# RUN npm run build
+#run the app
+CMD npm start
 
 
-# FROM base as production
-# WORKDIR /app
-
-# ENV NODE_ENV=production
-# RUN npm ci
-
-# RUN addgroup -g 1001 -S nodejs
-# RUN adduser -S nextjs -u 1001
-# USER nextjs
-
-
-# COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-# COPY --from=builder /app/node_modules ./node_modules
-# COPY --from=builder /app/package.json ./package.json
-# COPY --from=builder /app/public ./public
-
-# CMD npm start
-
-# FROM base as dev
-# ENV NODE_ENV=development
-# RUN npm install 
-# COPY . .
-# CMD npm run dev

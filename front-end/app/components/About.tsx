@@ -29,7 +29,7 @@ const About = () => {
                     <span className="font-bold">Julie Hong</span>
                     </h3>
                     <p className="text-gray-700">
-                    As part of the software team, Julie plays a crucial role in designing using Figma and developing the website's frontend using Next.js. She also contributes to market research efforts.</p>
+                    As part of the software team, Julie plays a crucial role in designing using Figma and developing the website&apos;s frontend using Next.js. She also contributes to market research efforts.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
@@ -64,7 +64,7 @@ const About = () => {
                     <span className="font-bold">Siddharth Sakriya</span>
                     </h3>
                     <p className="text-gray-700">
-                    Siddharth is a versatile member, contributing to both hardware and software development. He led the website's backend development using Flask and ensured seamless integration with the frontend.</p>
+                    Siddharth is a versatile member, contributing to both hardware and software development. He led the website&apos;s backend development using Flask and ensured seamless integration with the frontend.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
