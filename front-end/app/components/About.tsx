@@ -1,9 +1,7 @@
 import React from 'react';
 import Product from '@/public/product_last draft.png'
 import Logo from '@/public/logozoomed.png'
-import Detail from '@/public/product_detail_bin_out.png'
 import Image from 'next/image';
-import { getImageSize } from 'next/dist/server/image-optimizer';
 
 const About = () => {
   return (
@@ -22,65 +20,57 @@ const About = () => {
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Christopher Dalziel</span>
                     </h3>
-                    <p className="text-gray-700">
-                    John Doe is our lead developer. With over 5 years of experience in web development, he's proficient in various programming languages and frameworks.
-                    </p>
+                    <p className="text-gray-700">         
+                    Christopher is a key member of our hardware team, contributing to the development of the cart and door mechanisms. He specialises in designing 3D printed parts using Fusion 360.       </p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Julie Hong</span>
                     </h3>
                     <p className="text-gray-700">
-                    Jane Smith is our creative designer. She has a keen eye for detail and is passionate about creating engaging user experiences.
-                    </p>
+                    As part of the software team, Julie plays a crucial role in designing using Figma and developing the website's frontend using Next.js. She also contributes to market research efforts.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Kunyu Wang</span>
                     </h3>
                     <p className="text-gray-700">
-                    Michael Johnson is our marketing specialist. He excels in market analysis and developing effective strategies to reach our target audience.
-                    </p>
+                    Kunyu is a valuable member of the hardware team, specialising in the development of cart and door mechanisms.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Lauren Cosgrove</span>
                     </h3>
                     <p className="text-gray-700">
-                    Michael Johnson is our marketing specialist. He excels in market analysis and developing effective strategies to reach our target audience.
-                    </p>
+                    Lauren is an integral part of the software team, focusing on frontend development using Next.js and carrying out market research.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Nik Peleshatyi</span>
                     </h3>
                     <p className="text-gray-700">
-                    Michael Johnson is our marketing specialist. He excels in market analysis and developing effective strategies to reach our target audience.
-                    </p>
+                    Nik is proficient in both software and hardware, playing a key role in integrating the model and hardware components such as the camera and colour sensor. </p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Sara Khatun Guluzade</span>
                     </h3>
                     <p className="text-gray-700">
-                    Michael Johnson is our marketing specialist. He excels in market analysis and developing effective strategies to reach our target audience.
-                    </p>
+                    Sara is the lead developer of the AI object recognition model. With her expertise in AI, she ensures the accuracy and efficiency of our sorting system.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Siddharth Sakriya</span>
                     </h3>
                     <p className="text-gray-700">
-                    Michael Johnson is our marketing specialist. He excels in market analysis and developing effective strategies to reach our target audience.
-                    </p>
+                    Siddharth is a versatile member, contributing to both hardware and software development. He led the website's backend development using Flask and ensured seamless integration with the frontend.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Yihan Wang</span>
                     </h3>
                     <p className="text-gray-700">
-                    Michael Johnson is our marketing specialist. He excels in market analysis and developing effective strategies to reach our target audience.
-                    </p>
+                    Yihan is a skilled member of the hardware team, contributing to the development of cart and door mechanisms.</p>
                 </div>
             </div>
         </div>
@@ -90,7 +80,19 @@ const About = () => {
             </h2>
                 <div>
                     <p className="text-gray-700">
-                    We decided to create RecyclED to address the problem of recycling contamination.
+                    Have you ever been in a position where you don’t know what bin to dispose of your waste in? RecyclED has been created to alleviate the ambiguities around waste disposal and to prevent individuals from putting items in the wrong bin. When non-recyclable items end up in recycling bins, the whole bin becomes contaminated - none of the waste can be recycled anymore.
+                    </p>
+                    <br></br>
+                    <p className="text-gray-700">
+                    With 84% of UK households unintentionally contaminating their recycling bins, and only 7.5% of all recyclable waste in offices ending up in recycling facilities (75% of all office waste is recyclable), this situation is imperative to control, especially when the practice is crucial to reducing the volume of waste sent to landfills, conserving natural resources and reduces the need to mine or source new raw materials. It is evident that this is a large issue, and if not mitigated swiftly, likely to contribute to climate change.
+                    </p>
+                    <br></br>
+                    <p className="text-gray-700">
+                    Our product, RecyclED, is a smart recycling device that classifies items placed into it and automatically places them in the correct bin with the use of pistons on the left and right to move items over the correct hatch to be disposed of. Bin owners are also provided with an application that notifies them when their bins are close to filling up so that the appropriate staff can be sent to empty the bins, thus minimising the likelihood of bins overflowing.
+                    </p>
+                    <br></br>
+                    <p className="text-gray-700">
+                    RecyclED is perfect for large corporations seeking to enhance their waste management and simplify the recycling process.
                     </p>
                 </div>
                 <div className='flex flex-wrap justify-center'>

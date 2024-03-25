@@ -68,16 +68,7 @@ export const FOOTER_LINKS = [
       '/how-it-works',
       '/contact-us'
     ]
-  },
-  {
-    title: 'Our Community',
-    links: ['UK Recycle', 'Other Community', 'Other Community'],
-    urls: [
-      '/uk-recycle',
-      '/other-community',
-      '/other-community'
-    ]
-  },
+  }
 ];
 
 export const FOOTER_CONTACT_INFO = {

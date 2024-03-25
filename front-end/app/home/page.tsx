@@ -2,7 +2,6 @@
 
 import BinTable from "@/components/BinTable"
 import Charts from "@/components/Charts"
-import LoggedInLayout from "@/components/LoggedInLayout"
 
 export default function Home() {
   const binsData = [
