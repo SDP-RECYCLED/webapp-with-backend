@@ -50,24 +50,6 @@ const HowItWorks = () => {
         <img src="/product_detail_bin_out.png" alt="Cabinet with bins pulled out" className="w-auto h-100" />
       </div>
 
-      {/* Data Analysis */}
-      <div className="mb-12">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-green-1 to-teal-1 mb-4">
-          Data Analysis
-        </h2>
-        <p className="mb-5 text-gray-700 leading-relaxed">
-          The data analysis tool embedded within the RecyclED system offers invaluable
-          insights into waste disposal patterns and behaviors. By collecting and analyzing
-          data on the types of waste deposited into each bin, as well as the frequency
-          and timing of disposal, the tool generates comprehensive reports and visualizations
-          for users. These insights allow businesses and organizations to better understand
-          their waste generation trends, identify areas for improvement, and optimize waste
-          management strategies. From identifying the most common types of waste to pinpointing
-          peak usage times for each bin, the data analysis tool empowers users to make informed
-          decisions and drive continuous improvement in sustainability practices.
-        </p>
-
-      </div>
 
       {/* Waste Management */}
       <div className="mb-12">
@@ -75,15 +57,11 @@ const HowItWorks = () => {
           Waste Management
         </h2>
         <p className="mb-5 text-gray-700 leading-relaxed">
-          The RecyclED web application serves as a centralized hub for comprehensive waste management.
-          Through the intuitive and user-friendly interface, users can effortlessly monitor and manage
-          all their RecyclED bins from a single platform. The web app provides real-time updates and
-          alerts, notifying users when bins are approaching full capacity or require maintenance.
-          This proactive approach to waste management helps prevent overflow and downtime, ensuring
-          uninterrupted operation and maximum efficiency. Additionally, the web app offers features
-          for configuring bin settings, tracking usage statistics, and generating custom reports,
-          empowering users to optimize waste management processes and achieve their sustainability
-          goals with ease.
+          The RecyclED web application serves as a centralised hub for waste management.
+          Users can monitor and manage all their RecyclED bins from a single platform. 
+          The web app offers features for configuring bin settings and tracking usage statistics,
+          allowing users to optimise waste management and achieve their sustainability
+          goals.
         </p>
       </div>
 
