@@ -3,6 +3,7 @@ import AreaChartPlot from "./AreaChartPlot";
 import PieChartPlot from "./PieChartPlot";
 import RadarChartPlot from "./RadarChartPlot";
 import React, { useEffect, useState } from 'react';
+import { BACKEND_SERVER_URL } from '../constants';
 
 interface RecycledData {
     proportion: number;
@@ -17,7 +18,7 @@ const Charts = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await fetch('http://127.0.0.1:5000/api/recycled_items');
+            const response = await fetch(BACKEND_SERVER_URL + '/api/recycled_items');
             // Assume the response is an array of RecycledData objects
             const json: RecycledData[] = await response.json();
             setData(json); // Update the state with the fetched data

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import { BACKEND_SERVER_URL } from '../constants';
 
 const Login = () => {
   
@@ -29,7 +29,7 @@ const Login = () => {
       password: password,
     };
 
-    fetch('http://127.0.0.1:5000/api/login_user',
+    fetch(BACKEND_SERVER_URL + '/api/login_user',
     {
       method: 'POST',
       headers: {

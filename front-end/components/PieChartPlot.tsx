@@ -1,12 +1,13 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import React, { useEffect, useState } from 'react';
+import { BACKEND_SERVER_URL } from '../constants';
 
 const PieChartPlot = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/pi_chart_data'); 
+        const response = await fetch(BACKEND_SERVER_URL + '/api/pi_chart_data'); 
         const json = await response.json();
         setData(json);
         console.log("Fetched data:", json);

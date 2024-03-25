@@ -1,5 +1,6 @@
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import React, { useEffect, useState } from 'react';
+import { BACKEND_SERVER_URL } from '../constants';
 
 const AreaChartPlot = () => {
 
@@ -8,7 +9,7 @@ const AreaChartPlot = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/area_chart_data'); // Adjust the URL as needed
+        const response = await fetch(BACKEND_SERVER_URL + '/api/area_chart_data'); // Adjust the URL as needed
         const json = await response.json();
         setData(json);
         console.log("Fetched data:", json);
