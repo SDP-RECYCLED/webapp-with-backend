@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import React, { useEffect, useState } from 'react';
-import { BACKEND_SERVER_URL } from '../constants';
+import { BACKEND_SERVER_URL } from '../same';
 
 const PieChartPlot = () => {
   const [data, setData] = useState([]);

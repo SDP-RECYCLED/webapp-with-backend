@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { BACKEND_SERVER_URL } from '../constants';
+import { BACKEND_SERVER_URL } from '../same';
 
 const Login = () => {
   
