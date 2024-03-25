@@ -1,6 +1,6 @@
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import React, { useEffect, useState } from 'react';
-import { BACKEND_SERVER_URL } from '../constants';
+import { BACKEND_SERVER_URL } from '../same';
 
 const AreaChartPlot = () => {
 

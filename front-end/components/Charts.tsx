@@ -3,7 +3,7 @@ import AreaChartPlot from "./AreaChartPlot";
 import PieChartPlot from "./PieChartPlot";
 import RadarChartPlot from "./RadarChartPlot";
 import React, { useEffect, useState } from 'react';
-import { BACKEND_SERVER_URL } from '../constants';
+import { BACKEND_SERVER_URL } from '../same';
 
 interface RecycledData {
     proportion: number;
