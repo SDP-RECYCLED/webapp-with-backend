@@ -18,6 +18,13 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
+                    <span className="font-bold">Lauren Cosgrove</span>
+                    </h3>
+                    <p className="text-gray-700">
+                    Lauren is an integral part of the software team, focusing on frontend development using Next.js and carrying out market research.</p>
+                </div>
+                <div>
+                    <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Christopher Dalziel</span>
                     </h3>
                     <p className="text-gray-700">
@@ -33,27 +40,6 @@ const About = () => {
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
-                    <span className="font-bold">Kunyu Wang</span>
-                    </h3>
-                    <p className="text-gray-700">
-                    Kunyu is a valuable member of the hardware team, specialising in the development of cart and door mechanisms.</p>
-                </div>
-                <div>
-                    <h3 className="text-lg font-semibold mb-2">
-                    <span className="font-bold">Lauren Cosgrove</span>
-                    </h3>
-                    <p className="text-gray-700">
-                    Lauren is an integral part of the software team, focusing on frontend development using Next.js and carrying out market research.</p>
-                </div>
-                <div>
-                    <h3 className="text-lg font-semibold mb-2">
-                    <span className="font-bold">Nik Peleshatyi</span>
-                    </h3>
-                    <p className="text-gray-700">
-                    Nik is proficient in both software and hardware, playing a key role in integrating the model and hardware components such as the camera and colour sensor. </p>
-                </div>
-                <div>
-                    <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Sara Khatun Guluzade</span>
                     </h3>
                     <p className="text-gray-700">
@@ -61,10 +47,24 @@ const About = () => {
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
+                    <span className="font-bold">Nik Peleshatyi</span>
+                    </h3>
+                    <p className="text-gray-700">
+                    Nik is proficient in both software and hardware, playing a key role in integrating the model and hardware components such as the camera and colour sensor. </p>
+                </div> 
+                <div>
+                    <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Siddharth Sakriya</span>
                     </h3>
                     <p className="text-gray-700">
                     Siddharth is a versatile member, contributing to both hardware and software development. He led the website&apos;s backend development using Flask and ensured seamless integration with the frontend.</p>
+                </div>
+                <div>
+                    <h3 className="text-lg font-semibold mb-2">
+                    <span className="font-bold">Kunyu Wang</span>
+                    </h3>
+                    <p className="text-gray-700">
+                    Kunyu is a valuable member of the hardware team, specialising in the development of cart and door mechanisms.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">

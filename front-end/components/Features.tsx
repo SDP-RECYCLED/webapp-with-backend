@@ -45,15 +45,7 @@ const Features = () => {
         
 
       </div>
-      <div className="flex flex-col w-full gap-3 sm:flex-row mt-16 justify-center">
-          <Link href="/how-it-works">
-            <Button 
-              type="button" 
-              title="Learn more about how it works" 
-              variant='btn_green'
-            />
-          </Link>
-        </div>
+      
     </section>
   )
 }
