@@ -214,5 +214,12 @@ def recycled_items_now():
 def get_class():
     req = request.get_json()
     imageBase64 = req['image']    
-    response = requests.post("http://model:5005/recognize", json={"image": imageBase64})
-    return response.json().get('label')
+    response = requests.post("http://model:5005/recognize", json={"image": imageBase64}, headers={'Content-Type': 'application/json'})
+    class_ = response.json().get('label')
+    confidence = response.json().get('confidence')
+
+    # if class_ == "glass" or 
+    
+
+
+    return class_
