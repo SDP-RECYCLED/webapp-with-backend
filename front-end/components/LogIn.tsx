@@ -40,6 +40,8 @@ const Login = () => {
     }
     ).then(resp => resp.json())
     .then(data => {
+      // Here you can handle the response data
+      // document.cookie = "isLoggedIn=true; path=/; max-age=3600"; // Set a cookie to indicate the user is logged in
       window.location.href = '/home';
       // console.log(data);
     }).catch(e => {
