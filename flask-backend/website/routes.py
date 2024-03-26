@@ -189,7 +189,6 @@ def recycled_items_now():
         proportion = 0
     else:
         proportion = round(len(data)/len(total), 2)
-
     
     dates = []
     #retrieve the previous 7 dates    

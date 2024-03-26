@@ -1,5 +1,5 @@
 #selecting version of python
-FROM python:3.8-alpine
+FROM python:3.9
 #setting working directory
 WORKDIR /model
 #copying requirements.txt file to the working directory
