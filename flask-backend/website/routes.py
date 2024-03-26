@@ -218,8 +218,9 @@ def get_class():
     confidence = response.json().get('confidence')
     
     if class_ == "Glass" or class_ == "Metal" or class_ == "Plastic" or class_ == "Paper" or class_ == "Cardboard":
-        create_classification_data("arbitary_image_name", "recycled", confidence, 1)
+        create_classification_data(imageBase64, "recycled", confidence, 1)
+
     elif class_ == "Food Waste" or class_ == "Writing Utensils":
-        create_classification_data("arbitary_image_name", "recycled", confidence, 1)
+        create_classification_data(imageBase64, "general waste", confidence, 1)
     
     return class_
