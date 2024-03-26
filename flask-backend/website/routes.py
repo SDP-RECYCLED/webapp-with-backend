@@ -3,6 +3,7 @@ from .db_util.user import create_user, read_user, update_user, delete_user
 from .db_util.classification import retrieve_item_by_class, retrieve_items, create_classification_data, delete_classification_data,retrieve_items
 import json
 import datetime
+import requests
 
 routes = Blueprint('routes', __name__)
 #sddsjdshbsd
@@ -209,3 +210,9 @@ def recycled_items_now():
     ]
     return jsonify(stats)
 
+@routes.route('/api/getclass', methods=['POST'])
+def get_class():
+    req = request.get_json()
+    imageBase64 = req['image']    
+    response = requests.post("http://model:5005/recognize", json={"image": imageBase64})
+    return response.json().get('label')
