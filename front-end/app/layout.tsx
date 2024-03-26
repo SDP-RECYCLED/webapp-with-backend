@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar isLoggedIn={true} />
+        <Navbar isLoggedIn={false} />
         <motion.main className="relative overflow-hidden">
           {children}
         </motion.main>
