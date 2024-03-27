@@ -36,6 +36,11 @@ const HowItWorks = () => {
           The object recognition model is a machine learning model that can identify 
           and classify objects in an image. This model is used to identify the type 
           of waste and sort it into the correct bin.
+
+          It can identify the 20 most common waste items in an office setting and categorise them into 7 waste type classes such as paper, plastic, food waste, writing utensils, cardboard, metal and glass. 
+          The program can  thenclassify the item to the correct bin.
+          The model was trained via the Google Teachable Machine on 1000 manually compiled images, utilising computer vision techniques such as image data augmentation.
+          In addition, the image evaluation dataset was compiled to assess the model’s performance, outputting good results of 74.7 % accuracy, 75.7 % precision, 74.7 % recall, and 74.5 % F1 score.
         </p>
       </div>
 
