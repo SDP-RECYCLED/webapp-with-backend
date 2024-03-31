@@ -42,7 +42,7 @@ export default function Home() {
       <div className="container mx-auto py-10 px-4 max-w-8xl">
         <div className="m-10"> 
             <h1 className="mx-8 mb-6 mt-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl">Main Office<span className="text-sm text-gray-500 ml-4 font-thin">#37571</span></h1>
-                {/* <div className="flex flex-row">
+                {/* <div className="flex flex-row mx-8">
                     <div className="mr-5 mb-5">
                       <Link href="/">
                         <Button 

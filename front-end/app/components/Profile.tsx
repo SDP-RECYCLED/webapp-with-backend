@@ -14,15 +14,20 @@ const Profile = () => {
         </h2>
         <p className="text-gray-700 leading-relaxed mb-5 font-bold">
           Name: 
+          <span className="ml-2 font-thin">Joe Bloggs</span>
         </p>
         <p className="text-gray-700 leading-relaxed mb-5 font-bold">
           Email:
+          <span className="ml-2 font-thin">j.bloggs@acmecorp.com</span>
         </p>
         <p className="text-gray-700 leading-relaxed mb-5 font-bold">
           Phone Number:
+          <span className="ml-2 font-thin">01234 567890</span>
         </p>
         <p className="text-gray-700 leading-relaxed mb-5 font-bold">
           Company:
+          <span className="ml-2 font-thin">Acme Corp.</span>
+
         </p>
     
       </div>
