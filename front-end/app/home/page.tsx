@@ -5,11 +5,11 @@ import Charts from "@/components/Charts"
 
 export default function Home() {
   const binsData = [
-    { id: 1, name: 'Bin 1', status: 'Available' },
-    { id: 2, name: 'Bin 2', status: 'Full' },
-    { id: 3, name: 'Bin 3', status: 'Available' },
-    { id: 4, name: 'Bin 4', status: 'Available'},
-    { id: 5, name: 'Bin 5', status: 'Maintenance Needed' }
+    { id: 37571, name: 'Main Office', status: 'Available' },
+    { id: 25421, name: 'Meeting Room', status: 'Available' },
+    { id: 11238, name: 'Breakout Area', status: 'Available' },
+    { id: 98151, name: 'Kitchen', status: 'Available'},
+    { id: 51466, name: 'Reception', status: 'Maintenance Needed' }
   ];
 
   return (

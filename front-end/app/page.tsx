@@ -7,8 +7,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Bin />
-      <Guide /> */}
       <Features />
     </>
   )

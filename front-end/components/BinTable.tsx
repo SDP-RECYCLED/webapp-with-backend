@@ -41,7 +41,11 @@ const BinTable: React.FC<BinsProps> = ({ bins }) => {
               <tbody>
                 {bins.map((bin, index) => (
                   <tr key={bin.id} className={`${index % 2 === 0 ? 'bg-neutral-100' : 'bg-white'} border-b`}>
-                    <td className="whitespace-nowrap px-6 py-4 font-medium"><Link href="/home/individual-bin">{bin.name}</Link></td>
+                    <td className="whitespace-nowrap px-6 py-4 font-medium">
+                      <Link href={`/home/${bin.id}`}>
+                        {bin.name}
+                      </Link>
+                    </td>
                     <td className="whitespace-nowrap px-6 py-4">{bin.id}</td>
                     <td className={`whitespace-nowrap px-6 py-4 ${getStatusColor(bin.status)}`}>{bin.status}</td>
                   </tr>
