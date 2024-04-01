@@ -21,56 +21,55 @@ const About = () => {
                     <span className="font-bold">Lauren Cosgrove</span>
                     </h3>
                     <p className="text-gray-700">
-                    Lauren is an integral part of the software team, focusing on frontend development using Next.js and carrying out market research.</p>
-                </div>
+                    Lauren worked on the software team, developing the front-end of our website with Julie and carrying out usability tests to improve the website's UX. Additionally, she made the slides for our demo and carried out market research to use in the presentation.</p></div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Christopher Dalziel</span>
                     </h3>
                     <p className="text-gray-700">         
-                    Christopher is a key member of our hardware team, contributing to the development of the cart and door mechanisms. He specialises in designing 3D printed parts using Fusion 360.       </p>
-                </div>
+                    Chris worked on hardware, doing most of the low-level design for the project. He did any tasks which involved requisitioning parts from the technicians or using Fusion360, as well as assisting with tasks which involved physical construction work.</p>
+                    </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Julie Hong</span>
                     </h3>
                     <p className="text-gray-700">
-                    As part of the software team, Julie plays a crucial role in designing using Figma and developing the website&lsquo;s frontend using Next.js. She also contributes to market research efforts.</p>
-                </div>
+                    Julie mainly worked on developing front-end of the website with Lauren using Next.js and TailwindCSS. Tasks that requires designs such as website front-end, poster, and slides were a major focus for her during the project. </p>
+                    </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Sara Khatun Guluzade</span>
                     </h3>
                     <p className="text-gray-700">
-                    Sara is the lead developer of the AI object recognition model. With her expertise in AI, she ensures the accuracy and efficiency of our sorting system.</p>
-                </div>
+                    Sara built an object recognition and classification model using TensorFlow and Google Teachable Machine, focusing on image augmentation and model fine-tuning. She implemented key performance metrics to evaluate the model, as well as developing a new evaluation dataset, and improving model performance. </p>
+                    </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Nik Peleshatyi</span>
                     </h3>
                     <p className="text-gray-700">
-                    Nik is proficient in both software and hardware, playing a key role in integrating the model and hardware components such as the camera and colour sensor. </p>
+                    Nik worked primarily on software/hardware integration, which includes controlling hardware, and set up the AI model made by Sara as a recognition service. He rotated between all teams to help the progress: he shared his experience to aid front-end, back-end, and Docker infrastructure; developed a Motion Detection algorithm; built a backup LEGO cart that mimics the 3D-printed one and linked Raspberry Pi with Arduino to work together and control the cart. In addition, he built a data collection portal to store images for the model training dataset.</p>
                 </div> 
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Siddharth Sakriya</span>
                     </h3>
                     <p className="text-gray-700">
-                    Siddharth is a versatile member, contributing to both hardware and software development. He led the website&lsquo;s backend development using Flask and ensured seamless integration with the frontend.</p>
-                </div>
+                    Sid built the backend connecting the website, model, and hardware. Helped containerising the application with Docker. Built a CI pipeline (test automation), and performed extensive QA for the backend and hardware. Involved heavily with programming the Pi, Arduino, and EV3, and helped build the backup Lego cart. In addition, he was heavily involved in presenting at all 3 demos. </p>
+                    </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Kunyu Wang</span>
                     </h3>
                     <p className="text-gray-700">
-                    Kunyu is a valuable member of the hardware team, specialising in the development of cart and door mechanisms.</p>
+                    Kunyu mainly focused on the hardware aspect of the project. He worked with Chris and Yihan to assemble the arm, and later, assembled and improved the cart and related sliding doors. He worked with Yihan to repair and assemble the new cart modeled by Chris using 3D printing technology.</p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Yihan Wang</span>
                     </h3>
                     <p className="text-gray-700">
-                    Yihan is a skilled member of the hardware team, contributing to the development of cart and door mechanisms.</p>
+                    Yihan worked within the hardware team throughout the entire project, concentrating on the design, mechanism, and implementation of hardware components, particularly the cart and the outer frame. He ensured the reliability and robustness of our hardware system. He also made contributions to the databases for object recognition. </p>
                 </div>
             </div>
         </div>
