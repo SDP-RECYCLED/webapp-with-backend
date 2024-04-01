@@ -16,7 +16,7 @@ const Contact = () => {
             the email address below. We will get back to you as soon as possible.
 
         </p>
-      <Link href="mailto: recycled-sdp@gmail.com" className="text-blue-500 hover:underline">recycled-sdp@gmail.com</Link>
+      <Link href="mailto: recycled.sdp@gmail.com" className="text-blue-500 hover:underline">recycled.sdp@gmail.com</Link>
       </div>
     </div>
   );
