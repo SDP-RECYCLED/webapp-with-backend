@@ -74,8 +74,8 @@ export const FOOTER_LINKS = [
 export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
-    { label: 'Telephone', value: '+44 (0)123-456-7890' },
-    { label: 'Email', value: 'recycled@recycled.com' },
+    { label: 'Telephone', value: '07123 456789' },
+    { label: 'Email', value: 'recycled-sdp@gmail.com' },
   ],
 };
 
