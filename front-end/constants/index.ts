@@ -28,29 +28,28 @@ export const FEATURES = [
     icon: AIicon,
     variant: 'green',
     description:
-      "Reduce the contamination with AI sorting techniques, ensuring every piece of rubbish is accurately categorised into the right bin. Our  artificial intelligence algorithms analyse and classify waste items swiftly and accurately, optimising recycling efforts and minimising waste sent to landfills.",
+      "Our AI system automatically waste sorts into the correct recycling categories, reducing contamination and human error.",
   },
   {
     title: 'Statistics',
     icon: GraphIcon,
     variant: 'green',
     description:
-    'Our web application provides comprehensive and insightful statistics on waste disposal patterns. Gain valuable insights into your waste management practices, including information about the most common types of waste generated, recycling rates, and trends over time. With detailed analytics, you can make informed decisions to improve efficiency and sustainability.',
+    "View statistics on how your company is recycling, and how much waste is being diverted from landfill."
   },
   {
     title: 'Manage all your bins in one place',
     icon: ManageIcon,
     variant: 'green',
     description:
-    'The RecyclED web app offers a centralised platform for managing all your waste bins efficiently. Easily monitor the status of each bin, schedule collections, track fill levels, and generate reports to streamline waste management operations. With intuitive controls and real-time updates, staying on top of your waste management tasks has never been easier.',
+    "Monitor the status of all your bins in one place."
   },
   {
     title: 'Reduce landfill tax',
     icon: LandfillIcon,
     variant: 'green',
     description:
-    "Take control of your waste disposal costs by minimising unnecessary rubbish sent to landfills. By utilising AI sorting techniques and optimising waste management practices, you can significantly reduce the amount of waste destined for landfills, and lower your landfill tax expenses. Save money while promoting environmental sustainability with RecyclED's waste reduction solutions.",
-  },
+    "By recycling more with RecyclED, you can reduce the amount of waste sent to landfill, and therefore reduce your landfill tax."},
 ];
 
 // FOOTER SECTION
