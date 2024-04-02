@@ -21,9 +21,11 @@ app = Flask(__name__)
 def recognize():
     req = request.get_json()
     imageBase64 = req['image']
-    image = Image.open(BytesIO(
-        base64.b64decode(re.sub('^data:image/.+;base64,', '', imageBase64))
-    )).convert("RGB")
+    data = base64.b64decode(imageBase64)
+    image = Image.frombytes("RGBA", (1280, 720), data).convert("RGB")
+    # image = Image.open(BytesIO(
+    #     base64.b64decode(re.sub('^data:image/.+;base64,', '', imageBase64))
+    # )).convert("RGB")
     
     # Create the array of the right shape to feed into the keras model
     # The 'length' or number of images you can put into the array is
@@ -53,7 +55,7 @@ def recognize():
     print("Class:", class_name[2:], end="")
     print("Confidence Score:", str(np.round(confidence_score * 100))[:-2], "%")
 
-    return {"label": class_name, "confidence": confidence_score}
+    return {"label": class_name.strip().split()[-1], "confidence": round(float(confidence_score), 3)}
 
 
 if __name__ == '__main__':

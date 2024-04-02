@@ -209,18 +209,18 @@ def recycled_items_now():
     ]
     return jsonify(stats)
 
-@routes.route('/api/getclass', methods=['POST'])
+@routes.route('/getclass', methods=['POST'])
 def get_class():
     req = request.get_json()
     imageBase64 = req['image']    
     response = requests.post("http://model:5005/recognize", json={"image": imageBase64}, headers={'Content-Type': 'application/json'})
-    class_ = response.json().get('label')
-    confidence = response.json().get('confidence')
-    
+    data = json.loads(response.text)
+    class_ = data.get('label')
+    confidence = data.get('confidence')
+
     if class_ == "Glass" or class_ == "Metal" or class_ == "Plastic" or class_ == "Paper" or class_ == "Cardboard":
         create_classification_data(imageBase64, "recycled", confidence, 1)
 
     elif class_ == "Food Waste" or class_ == "Writing Utensils":
         create_classification_data(imageBase64, "general waste", confidence, 1)
-    
-    return class_
+    return {"label": class_}
