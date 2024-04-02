@@ -24,7 +24,7 @@ const HowItWorks = () => {
           which is sent to the object recognition model. The model then determines the type of waste and instructs the cart to move to the correct bin.
           The mechanism uses a colour sensor to detect the colour of the bin and moves the cart to the correct bin based on the colour.
         </p>
-        <Image src={cartImage} alt="Cart Mechanism" height={80}/>
+        <Image src={cartImage} alt="Cart Mechanism" height={200}/>
       </div>
 
       {/* Object Recognition Model */}
@@ -38,7 +38,7 @@ const HowItWorks = () => {
           of waste and sort it into the correct bin.
 
           It can identify the 20 most common waste items in an office setting and categorise them into 7 waste type classes such as paper, plastic, food waste, writing utensils, cardboard, metal and glass. 
-          The program can  thenclassify the item to the correct bin.
+          The program can then classify the item to the correct bin.
           The model was trained via the Google Teachable Machine on 1000 manually compiled images, utilising computer vision techniques such as image data augmentation.
           In addition, the image evaluation dataset was compiled to assess the model’s performance, outputting good results of 74.7 % accuracy, 75.7 % precision, 74.7 % recall, and 74.5 % F1 score.
         </p>
@@ -55,7 +55,7 @@ const HowItWorks = () => {
           existing bins can be retrofitted to work with the RecyclED system. The modular system also enables easy cleaning
           and maintenance, ensuring minimal downtime and maximum operational efficiency. 
         </p>
-        <Image src={productmodular} alt="Cabinet with bins pulled out" height={100} />
+        <Image src={productmodular} alt="Cabinet with bins pulled out" height={300} />
       </div>
 
 

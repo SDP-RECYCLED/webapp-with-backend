@@ -21,7 +21,7 @@ const About = () => {
                     <span className="font-bold">Lauren Cosgrove</span>
                     </h3>
                     <p className="text-gray-700">
-                    Lauren worked on the software team, developing the front-end of our website with Julie and carrying out usability tests to improve the website&lsquos UX. Additionally, she made the slides for our demo and carried out market research to use in the presentation.</p></div>
+                    Lauren worked on the software team, developing the front-end of our website with Julie and carrying out usability tests to improve the website's UX. Additionally, she made the slides for our demo and carried out market research to use in the presentation.</p></div>
                 <div>
                     <h3 className="text-lg font-semibold mb-2">
                     <span className="font-bold">Christopher Dalziel</span>
