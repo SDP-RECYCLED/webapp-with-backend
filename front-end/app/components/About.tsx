@@ -79,7 +79,7 @@ const About = () => {
             </h2>
                 <div>
                     <p className="text-gray-700">
-                    Have you ever been in a position where you don&lsquot know what bin to dispose of your waste in? RecyclED has been created to alleviate the ambiguities around waste disposal and to prevent individuals from putting items in the wrong bin. When non-recyclable items end up in recycling bins, the whole bin becomes contaminated - none of the waste can be recycled anymore.
+                    Have you ever been in a position where you don't know what bin to dispose of your waste in? RecyclED has been created to alleviate the ambiguities around waste disposal and to prevent individuals from putting items in the wrong bin. When non-recyclable items end up in recycling bins, the whole bin becomes contaminated - none of the waste can be recycled anymore.
                     </p>
                     <br></br>
                     <p className="text-gray-700">
