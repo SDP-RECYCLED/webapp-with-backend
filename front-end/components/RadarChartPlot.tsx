@@ -11,35 +11,35 @@ import {
 
 const RadarChartPlot = () => {
     const data = [
-        { hour: "12:00 AM", "number of users": 3 },
-        { hour: "01:00 AM", "number of users": 0 },
-        { hour: "02:00 AM", "number of users": 1 },
-        { hour: "03:00 AM", "number of users": 0 },
-        { hour: "04:00 AM", "number of users": 5 },
-        { hour: "05:00 AM", "number of users": 10 },
-        { hour: "06:00 AM", "number of users": 40 },
-        { hour: "07:00 AM", "number of users": 100 },
-        { hour: "08:00 AM", "number of users": 500 },
-        { hour: "09:00 AM", "number of users": 540},
-        { hour: "10:00 AM", "number of users": 600 },
-        { hour: "11:00 AM", "number of users": 1050 },
-        { hour: "12:00 PM", "number of users": 1000 },
-        { hour: "01:00 PM", "number of users": 1100 },
-        { hour: "02:00 PM", "number of users": 1200 },
-        { hour: "03:00 PM", "number of users": 1100 },
-        { hour: "04:00 PM", "number of users": 1000 },
-        { hour: "05:00 PM", "number of users": 800 },
-        { hour: "06:00 PM", "number of users": 300 },
-        { hour: "07:00 PM", "number of users": 100 },
-        { hour: "08:00 PM", "number of users": 100 },
-        { hour: "09:00 PM", "number of users": 20 },
-        { hour: "10:00 PM", "number of users": 10 },
-        { hour: "11:00 PM", "number of users": 7 }
-      ];
+      { "hour": "12 AM", "number of users": 0 },
+      { "hour": "1 AM", "number of users": 0 },
+      { "hour": "2 AM", "number of users": 0 },
+      { "hour": "3 AM", "number of users": 0 },
+      { "hour": "4 AM", "number of users": 0 },
+      { "hour": "5 AM", "number of users": 1 },
+      { "hour": "6 AM", "number of users": 4 },
+      { "hour": "7 AM", "number of users": 10 },
+      { "hour": "8 AM", "number of users": 50 },
+      { "hour": "9 AM", "number of users": 54 },
+      { "hour": "10 AM", "number of users": 60 },
+      { "hour": "11 AM", "number of users": 105 },
+      { "hour": "12 PM", "number of users": 100 },
+      { "hour": "1 PM", "number of users": 110 },
+      { "hour": "2 PM", "number of users": 120 },
+      { "hour": "3 PM", "number of users": 110 },
+      { "hour": "4 PM", "number of users": 100 },
+      { "hour": "5 PM", "number of users": 80 },
+      { "hour": "6 PM", "number of users": 30 },
+      { "hour": "7 PM", "number of users": 10 },
+      { "hour": "8 PM", "number of users": 10 },
+      { "hour": "9 PM", "number of users": 2 },
+      { "hour": "10 PM", "number of users": 1 },
+      { "hour": "11 PM", "number of users": 0 }
+  ];
       
 
   const formatHour = (hour: string) => {
-    if (hour === "12:00 AM" || hour === "06:00 AM" || hour === "12:00 PM" || hour === "06:00 PM") {
+    if (hour === "12 AM" || hour === "6 AM" || hour === "12 PM" || hour === "6 PM") {
       return hour;
     } else {
       return "";

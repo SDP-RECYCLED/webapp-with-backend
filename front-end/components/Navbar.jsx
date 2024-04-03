@@ -30,9 +30,9 @@ const Navbar = ({ isLoggedIn }) => {
         <div
           className={`${
             isNavVisible ? "" : "hidden"
-          } fixed right-0 top-0 h-screen w-2/3 bg-white rounded shadow-lg z-30`}
+          } fixed right-0 top-0 h-screen w-1/3 bg-white rounded shadow-lg z-30`}
         >
-          <ul className="h-full gap-12 lg:flex">
+          <ul className="h-full gap-4 lg:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}

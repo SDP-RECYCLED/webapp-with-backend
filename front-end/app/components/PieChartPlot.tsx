@@ -54,7 +54,7 @@ const PieChartPlot = () => {
           <Tooltip />
         </PieChart>
       </ResponsiveContainer>
-      <h2 style={{ textAlign: 'center' }}>item types</h2>
+      <h2 style={{ textAlign: 'center' }}></h2>
     </>
   );
 };
