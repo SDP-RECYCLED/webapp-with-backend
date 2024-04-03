@@ -1,1 +1,1 @@
-export const BACKEND_SERVER_URL = 'http://127.0.0.1:8080';
+export const BACKEND_SERVER_URL = 'http://10.124.129.20:8080';
